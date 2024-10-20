@@ -29,6 +29,13 @@ jobs:
 
     - name: Build
       run: dotnet build --configuration Release
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-artifacts
+        path: |
+          ./bin/Release
       
   test:
     runs-on: ubuntu-latest
