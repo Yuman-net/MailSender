@@ -75,4 +75,5 @@ jobs:
       - name: Push Docker image
         run: |
           docker push ghcr.io/yuman-net/vacancyservice:latest
+
   
