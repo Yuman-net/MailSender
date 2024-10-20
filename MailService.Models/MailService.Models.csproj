@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <Version>1.0.0.0</Version>
+    <Authors>Andrey Nikolaev</Authors>
+    <Copyright>Copyright © Cushman &amp; Wakefield 2021</Copyright>
+    <Description>Library of models for work with e-mail sender API.</Description>
+
+    <PackageId>MailSender.Models</PackageId>
+    <PackageVersion>1.0.0.0</PackageVersion>
+    <PackageDescription>Library of models for work with e-mail sender API.</PackageDescription>
+
+    <!-- Подключение набора правил для анализатора:
+             see: https://andrey.moveax.ru/post/net-standard-using-style-cop
+             see: https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/DotNetCli.md#rulesets-and-stylecopjson
+           -->
+    <CodeAnalysisRuleSet>$(SolutionDir)_stylecop\develop.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="$(SolutionDir)_stylecop\stylecop.json" Link="_stylecop\stylecop.json" />
+    <AdditionalFiles Include="$(SolutionDir)_stylecop\develop.ruleset" Link="_stylecop\develop.ruleset" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
