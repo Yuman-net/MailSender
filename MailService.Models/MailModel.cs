@@ -16,19 +16,18 @@ namespace MailService.Models
         {
         }
 
-        public MailModel(string message, string address, string? subject = null)
-            : this(message, address, Enumerable.Empty<string>(), subject)
-        {
-        }
+        //public MailModel(string message, string address, string? subject = null)
+        //    : this(message, address, Enumerable.Empty<string>(), subject)
+        //{
+        //}
 
-        public MailModel(
-            string message,
-            string address,
-            IEnumerable<string> recipientAddresses,
-            string? subject = null)
-            : this(message, new[] { address }, Enumerable.Empty<string>(), subject)
-        {
-        }
+        //public MailModel(
+        //    string message,
+        //    IEnumerable<string> recipientAddresses,
+        //    string? subject = null)
+        //    : this(message, new[] { address }, Enumerable.Empty<string>(), subject)
+        //{
+        //}
 
         /// <summary>
         /// Инициализирует новый экземпляр класса <see cref="MailModel"/>.
