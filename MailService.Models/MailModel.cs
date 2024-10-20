@@ -17,9 +17,17 @@ namespace MailService.Models
         }
 
         public MailModel(string message, string address, string? subject = null)
-            : this(message, )
+            : this(message, address, Enumerable.Empty<string>(), subject)
         {
-            
+        }
+
+        public MailModel(
+            string message,
+            string address,
+            IEnumerable<string> recipientAddresses,
+            string? subject = null)
+            : this(message, new[] { address }, Enumerable.Empty<string>(), subject)
+        {
         }
 
         /// <summary>
@@ -30,13 +38,42 @@ namespace MailService.Models
         /// <param name="recipientAddresses"></param>
         /// <param name="copyAddresses"></param>
         /// <param name="subject"></param>
-        public MailModel(string message,
-                         string address,
-                         IEnumerable<string> recipientAddresses,
-                         IEnumerable<string> copyAddresses,
-                         string? subject = null)
+        public MailModel(
+            string message,
+            IEnumerable<string> recipientAddresses,
+            IEnumerable<string> copyAddresses,
+            string? subject = null)
         {
-            
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                throw new ArgumentOutOfRangeException(nameof(message));
+            }
+
+            if (recipientAddresses is null)
+            {
+                throw new ArgumentOutOfRangeException(nameof(recipientAddresses));
+            }
+
+            if (!recipientAddresses.Any())
+            {
+                throw new ArgumentOutOfRangeException(nameof(recipientAddresses));
+            }
+
+            this.RecipientAddresses = new List<string>(recipientAddresses);
+
+            if (copyAddresses is null)
+            {
+                throw new ArgumentOutOfRangeException(nameof(copyAddresses));
+            }
+
+            if (!copyAddresses.Any())
+            {
+                throw new ArgumentOutOfRangeException(nameof(copyAddresses));
+            }
+
+            this.CopyResitientAddresses = new List<string>(copyAddresses);
+
+            this.Subject = subject;
         }
 
         /// <summary>
