@@ -45,6 +45,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-artifacts
+          path: |
+            ./bin/Release
+      
       - name: Run tests
         run: dotnet test --no-restore --verbosity normal
       
