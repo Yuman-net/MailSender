@@ -31,7 +31,7 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: build-artifacts
         path: ./out
@@ -40,7 +40,7 @@ jobs:
     needs: build
     steps:
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
         with:
           name: build-artifacts
           path: ./out
