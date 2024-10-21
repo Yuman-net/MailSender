@@ -26,15 +26,6 @@ jobs:
 
     - name: Restore dependencies
       run: dotnet restore
-
-    - name: Upload restore artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: restore-artifacts
-        path: |
-          **/obj/
-          **/packages/
-          
     - name: Build
       run: dotnet build --configuration Release
 
@@ -66,14 +57,6 @@ jobs:
           name: build-artifacts
           path: ./
 
-      - name: Download restore artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: restore-artifacts
-          path: |
-            **/obj/
-            **/packages/
-      
       - name: Pack Bus.Client
         run: dotnet pack ./MailService.Bus.Client/MailService.Bus.Client.csproj --configuration Release --output ./nupkgs
 
