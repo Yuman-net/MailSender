@@ -59,10 +59,10 @@ jobs:
           path: ./
           
       - name: Pack Bus.Client
-        run: dotnet pack MailService.Bus.Client/MailService.Bus.Client.csproj --configuration Release --output ./nupkgs
+        run: dotnet pack ./MailService.Bus.Client/MailService.Bus.Client.csproj --configuration Release --output ./nupkgs
 
       - name: Pack Bus.Client
-        run: dotnet pack MailService.Models/MailService.Models.csproj --configuration Release --output ./nupkgs
+        run: dotnet pack ./MailService.Models/MailService.Models.csproj --configuration Release --output ./nupkgs
 
       - name: Publish Nuget package
         env:
