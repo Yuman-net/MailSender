@@ -62,7 +62,7 @@ jobs:
           dotnet nuget add source https://nuget.pkg.github.com/Yuman-net/index.json --name GitHub --username and.nik.dev@gmail.com --password ${{ secrets.PKG_SECRET }} --store-password-in-clear-text
 
       - name: Pack Bus.Client
-        run: dotnet pack ./MailService.Bus.Client/MailService.Bus.Client.csproj --configuration Release --output ./nupkgs
+        run: dotnet pack ./MailService.Bus.Clinet/MailService.Bus.Client.csproj --configuration Release --output ./nupkgs
 
       - name: Pack Bus.Client
         run: dotnet pack ./MailService.Models/MailService.Models.csproj --configuration Release --output ./nupkgs
