@@ -16,27 +16,13 @@ namespace MailService.Models
         {
         }
 
-        //public MailModel(string message, string address, string? subject = null)
-        //    : this(message, address, Enumerable.Empty<string>(), subject)
-        //{
-        //}
-
-        //public MailModel(
-        //    string message,
-        //    IEnumerable<string> recipientAddresses,
-        //    string? subject = null)
-        //    : this(message, new[] { address }, Enumerable.Empty<string>(), subject)
-        //{
-        //}
-
         /// <summary>
         /// Инициализирует новый экземпляр класса <see cref="MailModel"/>.
         /// </summary>
-        /// <param name="message"></param>
-        /// <param name="address"></param>
-        /// <param name="recipientAddresses"></param>
-        /// <param name="copyAddresses"></param>
-        /// <param name="subject"></param>
+        /// <param name="message"> Сообщение. </param>
+        /// <param name="recipientAddresses"> Адреса. </param>
+        /// <param name="copyAddresses"> Адреса в копии. </param>
+        /// <param name="subject"> Заголовок письма. </param>
         public MailModel(
             string message,
             IEnumerable<string> recipientAddresses,
@@ -78,7 +64,7 @@ namespace MailService.Models
         /// <summary>
         /// Заголовок.
         /// </summary>
-        public string Subject { get; set; }
+        public string? Subject { get; set; }
 
         /// <summary>
         /// Адреса получателей.
