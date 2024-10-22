@@ -2,6 +2,8 @@
 // Copyright (c) Andrey Nikolaev. All rights reserved.
 // </copyright>
 
+using MailService.Models;
+
 namespace Services.Abstract
 {
     /// <summary>
@@ -9,6 +11,6 @@ namespace Services.Abstract
     /// </summary>
     public interface IMailSenderService
     {
-        Task<bool> SendEmail();
+        Task<bool> SendEmailAsync(MailModel mailModel);
     }
 }
