@@ -5,12 +5,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>1.0.0.0</Version>
+    <Version>1.0.1.0</Version>
     <Authors>Andrey Nikolaev</Authors>
     <Description>Library of Bus.Client for work with e-mail sender API.</Description>
 
     <PackageId>MailSender.Bus.Client</PackageId>
-    <PackageVersion>1.0.0.0</PackageVersion>
+    <PackageVersion>1.0.1.0</PackageVersion>
     <PackageDescription>Library of Bus.Client for work with e-mail sender API.</PackageDescription>
     
     <!-- Подключение набора правил для анализатора:
