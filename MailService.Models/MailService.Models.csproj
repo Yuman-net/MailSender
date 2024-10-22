@@ -6,12 +6,12 @@
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
-    <Version>1.0.1.0</Version>
+    <Version>1.0.2.0</Version>
     <Authors>Andrey Nikolaev</Authors>
     <Description>Library of models for work with e-mail sender API.</Description>
 
     <PackageId>MailSender.Models</PackageId>
-    <PackageVersion>1.0.1.0</PackageVersion>
+    <PackageVersion>1.0.2.0</PackageVersion>
     <PackageDescription>Library of models for work with e-mail sender API.</PackageDescription>
 
     <!-- Подключение набора правил для анализатора:
